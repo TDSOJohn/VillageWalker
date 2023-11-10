@@ -29,9 +29,6 @@ mesh = SubResource("BoxMesh_1dfl7")
 transform = Transform3D(-0.963635, -0.267222, 1.43593e-08, -0.18545, 0.668756, 0.719982, -0.192395, 0.6938, -0.693993, 0, 3.241, 0)
 shadow_enabled = true
 
-[node name="village" parent="." instance=ExtResource("1_opwrn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.83216, 0.0381727, 14.661)
-
 [node name="PlayerBody" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0816777, 0, 0)
 script = ExtResource("2_yhgh5")
@@ -48,3 +45,6 @@ shape = SubResource("ConvexPolygonShape3D_5rcbd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56566, 0)
 
 [node name="Camera3D" type="Camera3D" parent="PlayerBody/Neck"]
+
+[node name="village" parent="." instance=ExtResource("1_opwrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.0891271, 1)
