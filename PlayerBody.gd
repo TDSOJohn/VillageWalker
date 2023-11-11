@@ -17,20 +17,21 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			print("rotating")
+			# print("rotating")
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(30))
 
 func _physics_process(delta):
+	# print("FPS %d" % Engine.get_frames_per_second())
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
