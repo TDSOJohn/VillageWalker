@@ -44,4 +44,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.586638, 0)
 [node name="Camera3D" type="Camera3D" parent="Player/Neck"]
 
 [node name="village" parent="." instance=ExtResource("2_4v06h")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0.80169, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.80169, 0)
