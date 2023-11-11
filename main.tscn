@@ -1,13 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://4g6q08bniqm4"]
+[gd_scene load_steps=5 format=3 uid="uid://4g6q08bniqm4"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_w1htc"]
 [ext_resource type="PackedScene" uid="uid://dy6xalrv5nyg3" path="res://village.glb" id="2_4v06h"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_gm8jl"]
-size = Vector2(200, 200)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fn2kq"]
-data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rjx6o"]
 
@@ -20,16 +14,11 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_gm8jl")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fn2kq")
+[node name="village" parent="." instance=ExtResource("2_4v06h")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.80169, 0)
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70501, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558471, 1.90527, 0)
 script = ExtResource("1_w1htc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -42,6 +31,3 @@ shape = SubResource("ConvexPolygonShape3D_c652w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.586638, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Neck"]
-
-[node name="village" parent="." instance=ExtResource("2_4v06h")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.80169, 0)
